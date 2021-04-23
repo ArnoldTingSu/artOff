@@ -32,11 +32,19 @@ class User(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     objects = UserManager()
 
+class ArtManager(models.Manager):
+    def art_validator(self, postData):
+        errors = {}
+        if len(postData['caption']) < 3 :
+            errors['caption'] = "Please Make This About 3 Or More Characters"
+        return errors
+
 class Art(models.Model):
     caption = models.CharField(max_length = 100)
     art_image = models.ImageField(upload_to= "images/")
     user_art = models.ForeignKey(User, related_name= 'users_art', on_delete = models.CASCADE)
     user_likes = models.ManyToManyField(User, related_name='liked_post')
+    objects = ArtManager()
 
 class Comments(models.Model):
     comment = models.TextField()

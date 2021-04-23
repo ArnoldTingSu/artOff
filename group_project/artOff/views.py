@@ -22,6 +22,7 @@ def home_page(request):
     if not 'user_id' in request.session:
         return redirect('/')
     context = {
+        "users" : User.objects.all(),
         "user": User.objects.get(id = request.session['user_id']),
         "art" : Art.objects.all()
     }
@@ -30,7 +31,8 @@ def home_page(request):
 # USER PROFILE PAGE
 def user_profile_page(request, id):
     context ={
-        "profile" : User.objects.get(id=id)
+        "profile" : User.objects.get(id=id),
+        "art" : Art.objects.all()
     }
     return render(request, "user_profile.html", context)
 
@@ -70,6 +72,19 @@ def create_user(request):
             print('user made')
         return redirect('/')
 
+# CREATE ART
+def create_art(request):
+    if request.method == "POST":
+        errors = Art.objects.art_validator(request.POST)
+        if len(errors) > 0:
+            for key, value in errors.items():
+                messages.error(request, value)
+        else:
+            print('Beginning Create of art')
+            Art.objects.create(caption = request.POST['caption'], art_image = request.FILES['art_image'], user_art = User.objects.get(id = request.session['user_id']))
+            print('Art Has Been Made')
+        return redirect('/home')
+
 # LOGIN METHOD WITH USERNAME AND PASSWORD
 def login(request):
     if request.method == "POST":
@@ -83,8 +98,15 @@ def login(request):
         else:
             messages.error(request, "Username Does Not Exist")
     return redirect('/login_page')
+
 # LOGOUT METHOD
 
 def logout(request):
     request.session.flush()
     return redirect('/')
+
+def destroy(request, art_id):
+    art = Art.objects.get(id = art_id)
+    if request.method == "POST":
+        art.delete()
+    return redirect("/home")

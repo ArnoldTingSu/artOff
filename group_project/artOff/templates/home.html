@@ -9,17 +9,33 @@
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head>
 <body>
-    <ul>
-        <li><a href="/logout">Logout</a></li>
-        <li><a href="/user_profile/{{user.id}}">{{user.first_name}}</a></li>
-    </ul>
-    <!-- <a href="/logout">Logout</a>
+        <!-- <a href="/logout">Logout</a>
     <a href="/gallery">gallery page</a>
     <a href="/arena">arena page</a>
     <a href="/user_profile">My Profile</a> -->
-    <h1>This is the home page</h1>
+    <div>
+        <ul>
+            <li><a href="/user_profile/{{user.id}}">{{user.first_name}}</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </div>
+    <h3>Todays Lead is {{user.first_name}}</h3>
     <h2>{{i.username}}</h2>
-    <img class="p-pic" src="{{user.profile_pic.url}}" + {{user.profile_pic}} alt="{{ user.username }}" width="300" height="400">
+    <div>
+    <!-- This is a form ot create art/upload art -->
+    <form action="/create_art" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div>
+                <input type="text" required value="Caption" name="caption">
+            </div>
+            <div>
+                <input type="file" required name="art_image">
+            </div>
+            <div>
+                <button type="submit">Upload Art</button>
+            </div>
+        </form>
+    </div>
     <script src='main.js'></script>
 </body>
 </html>
