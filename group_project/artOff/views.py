@@ -22,14 +22,17 @@ def home_page(request):
     if not 'user_id' in request.session:
         return redirect('/')
     context = {
-        "user" : User.objects.all(),
+        "user": User.objects.get(id = request.session['user_id']),
         "art" : Art.objects.all()
     }
     return render(request, "home.html", context)
 
 # USER PROFILE PAGE
-def user_profile_page(request):
-    return render(request, "user_profile.html")
+def user_profile_page(request, id):
+    context ={
+        "profile" : User.objects.get(id=id)
+    }
+    return render(request, "user_profile.html", context)
 
 # ARENA PAGE
 def arena_page(request):

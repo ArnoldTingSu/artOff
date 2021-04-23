@@ -9,15 +9,17 @@
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head>
 <body>
-    <a href="/logout">Logout</a>
+    <ul>
+        <li><a href="/logout">Logout</a></li>
+        <li><a href="/user_profile/{{user.id}}">{{user.first_name}}</a></li>
+    </ul>
+    <!-- <a href="/logout">Logout</a>
     <a href="/gallery">gallery page</a>
     <a href="/arena">arena page</a>
-    <a href="/user_profile">My Profile</a>
+    <a href="/user_profile">My Profile</a> -->
     <h1>This is the home page</h1>
-    {% for i in user %}
     <h2>{{i.username}}</h2>
-    <img class="p-pic" src="{{i.profile_pic.url}}" + {{user.profile_pic}} alt="{{ user.username }}" width="300" height="400">{{ i.profile_pic.url }}</img>
-    {% endfor %}
+    <img class="p-pic" src="{{user.profile_pic.url}}" + {{user.profile_pic}} alt="{{ user.username }}" width="300" height="400">
     <script src='main.js'></script>
 </body>
 </html>
