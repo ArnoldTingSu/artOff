@@ -5,9 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ArtOff Registration</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
 </head>
 <body>
-    <a href="/login">Already a memeber?</a>
+    <div class="error-msg">
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li {% if messages.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
     <div id="reg_container">
         <div class="reg_head">
             <h1>ArtOff</h1>
@@ -16,13 +26,38 @@
         <div class="reg_body">
             <p>Not yet a member? Register here</p>
             <h3>Registration</h3>
-            <input type="text" name="fname" class="login-form" placeholder="First Name">
-            <input type="text" name="lname" class="login-form" placeholder="Last Name">
-            <input type="text" name="email" class="login-form" placeholder="Email">
-            <input type="text" name="password" class="login-form" placeholder="Password">
-            <input type="text" name="confirm" class="login-form" placeholder="Confirm Password">
-            <button class="reg_btn">register</button>
+            <div class="register-form" >
+                <form action="/register" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="field">
+                    <input type="text" name="first_name" value="First Name">
+                </div>
+                <div class="field">
+                    <input type="text" name="last_name" value="Last Name">
+                </div>
+                <div class="field">
+                    <input type="text" name="username" value="Username" >
+                </div>
+                <div class="field">
+                        <input type="text" name="email" value="name@gmail.com">
+                </div>
+                <div class="field">
+                    <input type="text" name="password" value="Password" >
+                </div>
+                <div class="field">
+                    <label class="confirm-password" for="confirm_password">Confirm Password</label>
+                    <br>
+                    <input type="password" name="confirm_password" id="confirm_password">
+                </div>
+                <div class="field">
+                    <input type="file" name="profile_pic" >
+                </div>
+                <div>
+                    <button type="submit">Register</button>
+                </div>
+            </form>
         </div>
     </div>
+    <a href="/login_page">Already a memeber?</a>
 </body>
 </html>

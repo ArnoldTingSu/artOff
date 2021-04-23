@@ -1,0 +1,35 @@
+.register-form{
+    display: flex;
+    justify-content: center;
+    margin: 50px  0;
+}
+a{
+    display: flex;
+    justify-content: center;
+    margin-right: 60px;
+}
+input[type="text"]{
+    text-align: center;
+}
+label.confirm-password{
+    margin-left: 25px;
+}
+h1{
+    display: flex;
+    justify-content: center;
+    margin-right: 80px;
+}
+h3{
+    display: flex;
+    justify-content: center;
+    margin-right: 80px;
+}
+p{
+    display: flex;
+    justify-content: center;
+    margin-right: 80px;
+}
+button{
+    margin-top: 10px;
+    margin-left: 48px
+}

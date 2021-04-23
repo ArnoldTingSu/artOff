@@ -1,0 +1,27 @@
+h1{
+    display: flex;
+    justify-content: center;
+}
+p{
+    display: flex;
+    justify-content: center;
+}
+a{
+    text-decoration: none;
+}
+a.main-links{
+    margin-left: 10px;
+    text-decoration: none;
+}
+ul{
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+    padding: 0px;
+}
+li{
+    list-style: none;
+}
+div{
+    margin-top: 200px;
+}
