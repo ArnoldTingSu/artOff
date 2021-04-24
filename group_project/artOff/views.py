@@ -24,7 +24,7 @@ def home_page(request):
     context = {
         "users" : User.objects.all(),
         "user": User.objects.get(id = request.session['user_id']),
-        "art" : Art.objects.all()
+        "arts" : Art.objects.all()
     }
     return render(request, "home.html", context)
 
@@ -66,6 +66,7 @@ def create_user(request):
             pw_hash = bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
             users = User.objects.create(first_name = request.POST['first_name'], last_name = request.POST['last_name'], username = request.POST['username'], email = request.POST['email'], password = pw_hash, profile_pic = request.FILES['profile_pic'])
             request.session['user_id']  = users.id
+            request.session['username'] = users.username
             messages.success(request, "You have Successfully Logged In")
             return redirect('/home')
             print('*'*50)
@@ -98,6 +99,13 @@ def login(request):
         else:
             messages.error(request, "Username Does Not Exist")
     return redirect('/login_page')
+
+
+def likes(request, id):
+    user = User.objects.get(id=request.session['user_id'])
+    like = Art.objects.get(id=id)
+    user.liked_post.add(like)
+    return redirect('/home')
 
 # LOGOUT METHOD
 
