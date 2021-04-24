@@ -48,6 +48,10 @@ def hall_of_fame_page(request):
 def gallery_page(request):
     return render(request, "gallery.html")
 
+# PROFILE EDIT PAGE
+def edit_profile_page(request):
+    return render(request, "edit_profile.html")
+
 # DELETE PAGE
 def delete_confirm_page(request):
     return render(request, "delete_confirm.html")
@@ -100,7 +104,7 @@ def login(request):
             messages.error(request, "Username Does Not Exist")
     return redirect('/login_page')
 
-
+# LIKE METHOD
 def likes(request, id):
     user = User.objects.get(id=request.session['user_id'])
     like = Art.objects.get(id=id)

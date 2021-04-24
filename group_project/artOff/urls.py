@@ -14,6 +14,7 @@ urlpatterns = [
     path('arena', views.arena_page),
     path('hall_of_fame_page', views.hall_of_fame_page),
     path('user-likes/<int:id>', views.likes),
+    path('edit_profile_page', views.edit_profile_page),
     path('gallery', views.gallery_page),
     path('delete_confirm', views.delete_confirm_page),
 ]

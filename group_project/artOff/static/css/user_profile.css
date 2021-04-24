@@ -1,0 +1,36 @@
+ul{
+    padding: 0px;
+    display: flex;
+    justify-content: flex-end;
+}
+li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 30px;
+}
+a{
+    font-size: x-large;
+}
+h1{
+    text-align: center;
+    margin-top: 140px;
+}
+p{
+    text-align: center;
+    width: 350px;
+}
+p.posted-comment{
+    margin-right: 75px;
+}
+div.user-info{
+    border-bottom: black solid 3px;
+    margin: 0px 200px 0px 200px;
+}
+div.comment-box{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 260px;
+}
+div.new-comment{
+    width: 300px;
+}

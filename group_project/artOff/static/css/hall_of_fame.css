@@ -1,0 +1,38 @@
+div.hof_card{
+    width: 120px;
+    display: inline-block;
+    margin: 25px;
+    border-radius: 10px;
+}
+#card-1{
+    height: 350px;
+    background-color: aqua;
+}
+#card-2{
+    height: 400px;
+    background-color: brown;
+}
+#card-3{
+    height: 275px;
+    background-color: darkblue;
+}
+div#hall_of_fame{
+    margin: 100px 200px 0px 400px;
+}
+a{
+    display: flex;
+    justify-content: flex-end;
+}
+ul{
+    display: flex;
+    justify-content: flex-end;
+    padding: 0px;
+}
+li{
+    margin-left: 20px;
+    list-style: none;
+    display: inline-block;
+}
+li.push{
+    margin-right: 50px;
+}
