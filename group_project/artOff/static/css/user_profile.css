@@ -13,7 +13,10 @@ a{
 }
 h1{
     text-align: center;
-    margin-top: 140px;
+    margin-top: 80px;
+}
+p.qoute{
+    margin-left: 250px;
 }
 p{
     text-align: center;
@@ -33,4 +36,21 @@ div.comment-box{
 }
 div.new-comment{
     width: 300px;
+}
+div.image-gallery{
+    background-color: pink;
+    width: 600px;
+    height: 245px;
+    margin-left: 75px;
+    display: inline-block;
+}
+div.best-image{
+    margin-left: 200px;
+}
+img.image-holder{
+    margin-bottom: 129px;
+}
+h2{
+    display: inline;
+    margin-left: 245px;
 }
