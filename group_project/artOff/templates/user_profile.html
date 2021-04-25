@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="nav">
-        <ul>
+        <ul class="nav-links">
             <li><a href="/home">Home</a></li>
             <li><a href="/edit_profile_page">Edit Profile</a></li>
             <li><a href="/logout">Logout</a></li>
@@ -30,7 +30,15 @@
     <div class="best-image">
         <img class="image-holder" src="{% static 'images\placeholder.png' %}" width="200" height="200">
         <div class="image-gallery">
-            <a href="/gallery">Gallery</a>
+            <div class="gallery">
+                <!-- forloop of images (gallery) -->
+                <ul class="ul-forloop">
+                    <li class="image-forloop"><img src="{% static 'images\placeholder.png' %}" width="50" height="50"></li>
+                    <li class="image-forloop"><img src="{% static 'images\placeholder.png' %}" width="50" height="50"></li>
+                    <li class="image-forloop"><img src="{% static 'images\placeholder.png' %}" width="50" height="50"></li>
+                </ul>
+                <a href="/gallery">Gallery</a>
+            </div>
         </div>
     </div>
     <script src='main.js'></script>

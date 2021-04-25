@@ -1,0 +1,10 @@
+div.header{
+    display: flex;
+    justify-content: flex-end;
+    font-size: x-large;
+    margin-right: 20px;
+}
+a{
+    margin-top: 10px;
+    margin-right: 20px;
+}

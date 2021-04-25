@@ -1,4 +1,4 @@
-ul{
+ul.nav-links{
     padding: 0px;
     display: flex;
     justify-content: flex-end;
@@ -34,6 +34,11 @@ div.comment-box{
     justify-content: flex-end;
     margin-right: 260px;
 }
+div.gallery{
+    height: 50px;
+    width: 100px;
+    background-color: brown;
+}
 div.new-comment{
     width: 300px;
 }
@@ -53,4 +58,7 @@ img.image-holder{
 h2{
     display: inline;
     margin-left: 245px;
+}
+li.image-forloop{
+    display: inline-block;
 }
