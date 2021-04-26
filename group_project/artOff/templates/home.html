@@ -16,13 +16,13 @@
 <body>
     <div id="home_wrapper">
         <div class="a_links">
-            <a href="/user_profile/{{user.id}}">{{user.first_name}}'s Profile</a>  |  <a href="/arena">Arena Page</a>  |  <a href="/logout">Logout</a>
+            <a href="/user_profile/{{user.id}}" style="color: gray;">{{user.first_name}}'s Profile</a>  |  <a href="/arena" style="color: gray;">Arena Page</a>  |  <a href="/logout" style="color: gray;">Logout</a>
         </div>
         <!-- link tag here -->
         <h2 class="home_h2">Todays Lead is <a href=""></a>{{user.username}}</h2>
         <div class="artwork">
             {% for art in arts %}
-                <img src="{{art.art_image.url}}" alt="{{user.first_name}}" width="200" height="200"> 
+                <img src="{{art.art_image.url}}" alt="{{user.first_name}}" width="300"> 
             <p>By: {{art.user_art.username}}  |  <button class="like_art"><a href="/user-likes/{{art.id}}">Like</a></button> {{art.user_likes.count}}</p>
             {% endfor %}
         </div>
