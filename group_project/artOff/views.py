@@ -18,7 +18,7 @@ def login_page(request):
     return render(request, "login.html")
 
 # HOME PAGE
-def home_page(request):
+def home(request):
     if not 'user_id' in request.session:
         return redirect('/')
     context = {
