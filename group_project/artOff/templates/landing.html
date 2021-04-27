@@ -7,17 +7,30 @@
     <title>artOff</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/landing.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div>
-        <h1>Art Off</h1>
-        <p>Where art faces off</p>
-        <ul>
-            <li><a href="/login_page" class="main-links">Login</a></li>
-            <li><a href="/register_page" class="main-links">Register</a></li>
-        </ul>
-        <p><a href="/hall_of_fame_page">Hall Of Fame!</a></p>
+    <div id="landing">
+        <div class="title">
+            <h1>ArtOff</h1>
+            <h3>Where art faces off</h3>
+        </div>
+        <div class="log_link">
+            <h4>User login</h4>
+            <button><a href="/login_page" class="main-links">Login</a></button>
+        </div>
+        <div class="reg_link">
+            <h4>New user registration</h4>
+            <button><a href="/register_page" class="main-links">Register</a></button>
+        </div>
+        <div class="hof">
+            <h4>To the Hall Of Fame</h4>
+            <button><a href="/hall_of_fame_page" class="main-links">Hall Of Fame</a></button>
+        </div>
+        <script src='main.js'></script>
     </div>
-    <script src='main.js'></script>
 </body>
 </html>
