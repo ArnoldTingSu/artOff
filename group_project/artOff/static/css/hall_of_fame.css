@@ -6,21 +6,28 @@
     background-color: rgb(24, 22, 22);
 }
 
-nav-bar{
+.nav-bar{
     padding: 10px;
 }
-
 .main {
+    display: block;
+    background-color: black;
+    height: 931px;
+    margin: 0 auto;
+}
+.header {
+    padding: 20px;
+    color: white;
     display: flex;
     justify-content: center;
-    background-color: black;
-    height: 900px;
 }
 div#hall_of_fame{
-    width: 1000px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     vertical-align: bottom;
+    background-color: rgb(216, 216, 216);
+    border: 2px solid darkgrey;
+    border-radius: 5px;
 }
 div.hof_card{
     width: 350px;
