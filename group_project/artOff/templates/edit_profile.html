@@ -21,8 +21,8 @@
                     <img src="" alt="Profile Pic">
                     <button type="submit">New Profile Pic</button>
                 </div>
-                <div>
-                    <form action="/edit_account/{{user.id}}" method="POST">
+                <div class=form-input>
+                    <form action="edit_profile_page/update" method="POST">
                         {% csrf_token %}
                         <p>First Name <input type="text" name="first_name" value={{user.first_name}}></p>
                         <p>Last Name <input type="text" name="last_name" value={{user.last_name}}></p>
