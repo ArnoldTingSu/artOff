@@ -134,7 +134,7 @@ def edit(request):
         profile.first_name = request.POST['first_name']
         profile.last_name = request.POST['last_name']
         profile.username = request.POST['username']
-        profile.qoute = request.POST['qoute']
+        profile.quote = request.POST['quote']
         profile.email = request.POST['email']
         profile.save()
     return redirect(f'user_profile/{profile.id}')
