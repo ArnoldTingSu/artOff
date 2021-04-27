@@ -1,9 +1,13 @@
+*{
+    margin:0;
+    padding: 0;
+}
 
 #login-wrapper {
     margin: auto;
     background-image: url("https://www.technocrazed.com/wp-content/uploads/2015/12/black-wallpaper-to-set-as-background-23.jpg");
     background-size: cover;
-    height: 650px;
+    height: 969px;
 }
 
 .login-form {

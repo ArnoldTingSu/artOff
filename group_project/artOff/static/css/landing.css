@@ -1,8 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 #landing {
-    margin: auto;
     padding-top: 75px;
     padding-bottom: 75px;
     background-image: url("https://www.bluehorizonprints.com.au/wp-content/uploads/Graffiti-Collage-The-Buddha-s.jpg");
+    background-size: cover;
+    height: 819px;
 }
 
 h1{
