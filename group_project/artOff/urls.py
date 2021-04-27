@@ -7,6 +7,7 @@ urlpatterns = [
     path('login_page', views.login_page),
     path('register_page', views.register_page),
     path('logout', views.logout),
+    path('login', views.login),
     path('arena', views.arena_page),
     path('hall_of_fame_page', views.hall_of_fame_page),
     path('user-likes/<int:id>', views.likes),
