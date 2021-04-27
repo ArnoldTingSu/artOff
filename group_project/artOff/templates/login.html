@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,35 +8,38 @@
     <title>ArtOff Login</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <div class="error-msg">
-        {% if messages %}
+
+    <div id="login-wrapper">
+        <div class="login-form">
+            <h1>ArtOff</h1>
+            <div class="error-msg">
+                {% if messages %}
                 <ul class="messages">
                     {% for message in messages %}
-                    <li {% if messages.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                    <li {% if messages.tags %} class="{{ message.tags }}" style="color: white;" {% endif %}>{{ message }}</li>
                     {% endfor %}
                 </ul>
-            {% endif %}
-        </div>
-        <h1>Login</h1>
-    <div>
-        <div class="login-form">
+                {% endif %}
+            </div>
             <form action="/login" method="POST">
                 {% csrf_token %}
-                <div class="field" >
-                    <label class="email-push" for="username">UserName:</label>
-                    <input type="username" name="username">
-                <div class="field" >
-                    <label class="pass-label" for="password">Password:</label>
-                    <input type="password" name="password" value="Password Here" >
-                </div>
-                <div>
-                    <button type="submit">login</button>
-                </div>
+                <!-- <label class="email-push" for="username">UserName</label> -->
+                <input type="username" name="username" class="login-input" placeholder="Username">
+                <!-- <label class="pass-label" for="password">Password</label> -->
+                <input type="password" name="password" class="login-input" placeholder="Password">
+                <button type="submit" class="btn-login">login</button>
             </form>
-            <p>Dont have an account?<a href="/register_page"> Register Here</a></p>
+            <br>
+            <p>Dont have an account?</p>
+            >> <a href="/register_page" style="color: white;"> Register Here</a> <<
         </div>
+        
     </div>
 </body>
+
 </html>
