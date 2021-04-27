@@ -1,7 +1,13 @@
+
 .register-form{
     display: flex;
     justify-content: center;
     margin: 50px  0;
+}
+.reg_body {
+    background-image: url("https://wallpaperaccess.com/full/313045.jpg");
+    background-size: cover;
+    height: 850px;
 }
 a{
     display: flex;
