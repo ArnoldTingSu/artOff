@@ -1,11 +1,7 @@
-*{
-    margin:0;
-    padding: 0;
-}
 
 #login-wrapper {
     margin: auto;
-    background-image: url("https://www.technocrazed.com/wp-content/uploads/2015/12/black-wallpaper-to-set-as-background-23.jpg");
+    background-color: black;
     background-size: cover;
     height: 969px;
 }
@@ -22,9 +18,10 @@
 
 h1 {
     color: white;
-    font-size: 50px;
+    font-size: 75px;
     font-family: 'Original Surfer', cursive;
     text-shadow: 4px 10px gray;
+    margin-bottom: 30px;
 }
 
 .login-input {

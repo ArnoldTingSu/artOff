@@ -53,7 +53,9 @@ h4{
 }
 
 button {
+    margin-top: 5px;
     background-color: gray;
+    border-radius: 30px;
     width: 100%;
 }
 
