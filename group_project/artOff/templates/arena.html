@@ -18,7 +18,8 @@
         </div>
         <div class="row mt-5">
             <div class="col-md-8 col-sm-12 offset-md-1 p-4 text-center">
-                <img src="" alt="imageOne">
+                {% for i in art %}
+                <img src="{{i.art_image.url}}" alt="{{i.caption}}" width="300" height="300">
                 <form action="/like" method="POST">
                     {% csrf_token %}
                     <button type="submit">Like</button>
@@ -28,10 +29,21 @@
                     {% csrf_token %}
                     <button type="submit">Next</button>
                 </form>
-                <img src="" alt="imageTwo">
+                <img src="{{i.art_image.url}}" alt="{{i.caption}}" width="300" height="300">
                 <form action="/like" method="POST">
                     {% csrf_token %}
                     <button type="submit">Like</button>
+                </form>
+                {% endfor %}
+            </div>
+            <!-- in the works so only winners get to recieve a comment? -->
+            <div>
+                <form method="POST" action="/make_comment/{{art.id}}" >
+                    {% csrf_token %}
+                    Comment : <input type="text" name="comment">
+                    <div>
+                        <button type="submit">Upload Feedback</button>
+                    </div>
                 </form>
             </div>
         </div>
