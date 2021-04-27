@@ -18,7 +18,7 @@ def login_page(request):
     return render(request, "login.html")
 
 # HOME PAGE
-def home_page(request):
+def home(request):
     if not 'user_id' in request.session:
         return redirect('/')
     context = {
@@ -160,3 +160,9 @@ def destroy(request, art_id):
     if request.method == "POST":
         art.delete()
     return redirect("/home")
+
+# UPDATE PROFILE INFORMATION
+def update_profile(request):
+    update_user = User.objects.get(id=request.session['user_id'])
+    print(update_user)
+    return redirect('/')
