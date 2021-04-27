@@ -38,7 +38,12 @@ def user_profile_page(request, id):
 
 # ARENA PAGE
 def arena_page(request):
-    return render(request, "arena.html")
+    context = {
+        "art" : Art.objects.all(),
+        "users" : User.objects.all(),
+        "me" : User.objects.get(id = request.session['user_id'])
+    }
+    return render(request, "arena.html", context)
 
 # HALL OF FAME PAGE
 def hall_of_fame_page(request):
@@ -49,8 +54,11 @@ def gallery_page(request):
     return render(request, "gallery.html")
 
 # PROFILE EDIT PAGE
-def edit_profile_page(request):
-    return render(request, "edit_profile.html")
+def edit_profile_page(request, profile_id):
+    context = {
+        "profile" : User.objects.get(id = request.session['user_id'])
+    }
+    return render(request, "edit_profile.html", context)
 
 # DELETE PAGE
 def delete_confirm_page(request):
@@ -111,12 +119,42 @@ def likes(request, id):
     user.liked_post.add(like)
     return redirect('/home')
 
-# LOGOUT METHOD
+def make_comment(request, id):
+    user = User.objects.get(id = request.session['user_id'])
+    art = Art.objects.get(id = id )
+    Comments.objects.create(comment = request.POST['comment'], user = user, art = art )
+    return redirect('/arena')
 
+def edit(request):
+    profile = User.objects.get(id = request.session['user_id'])
+    context = {
+        "profile" : profile
+    }
+    if request.method == "POST":
+        profile.first_name = request.POST['first_name']
+        profile.last_name = request.POST['last_name']
+        profile.username = request.POST['username']
+        profile.qoute = request.POST['qoute']
+        profile.email = request.POST['email']
+        profile.save()
+    return redirect(f'user_profile/{profile.id}')
+
+def edit_pic(request):
+    profile = User.objects.get(id = request.session['user_id'])
+    context = {
+        "profile" : profile
+    }
+    if request.method == "POST":
+        profile.profile_pic = request.FILES['profile_pic']
+        profile.save()
+    return redirect(f'user_profile/{profile.id}')
+
+# LOGOUT METHOD
 def logout(request):
     request.session.flush()
     return redirect('/')
 
+# DELETE METHOD
 def destroy(request, art_id):
     art = Art.objects.get(id = art_id)
     if request.method == "POST":

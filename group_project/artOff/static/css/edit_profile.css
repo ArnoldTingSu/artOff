@@ -1,0 +1,52 @@
+div.header{
+    display: flex;
+    justify-content: flex-end;
+}
+a{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+div.edit-form{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+img.p-pic{
+    height: 200px;
+    border-radius: 10pc;
+}
+.profile-pic-button{
+    margin-left: 40px;
+    margin-top: 15px;
+}
+button{
+    box-shadow: gray 10px 10px;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+button#user-info{
+    margin-left: 20px;
+}
+input{
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+input[type="text"] {
+    text-align: center;
+}
+img.p-pic{
+    height: 200px;
+    border-radius: 10pc;
+}
+div.user-info-form{
+    margin-top: 50px;
+}
+.email-move-right{
+    margin-left: 30px;
+}
+.qoute-move-right{
+    margin-left: 30px;
+}
+.username-move-right{
+    margin-left: 5px;
+}

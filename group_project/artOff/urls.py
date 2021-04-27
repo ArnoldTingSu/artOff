@@ -14,7 +14,10 @@ urlpatterns = [
     path('arena', views.arena_page),
     path('hall_of_fame_page', views.hall_of_fame_page),
     path('user-likes/<int:id>', views.likes),
-    path('edit_profile_page', views.edit_profile_page),
+    path('make_comment/<int:art.id>', views.make_comment),
+    path('profile/<int:profile_id>/edit', views.edit_profile_page),
     path('gallery', views.gallery_page),
+    path('edit_info', views.edit),
+    path('edit_pic', views.edit_pic),
     path('delete_confirm', views.delete_confirm_page),
 ]

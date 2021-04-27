@@ -11,6 +11,11 @@ li{
 a{
     font-size: x-large;
 }
+a#gallery{
+    width: 590px;
+    display: flex;
+    justify-content: flex-end;
+}
 h1{
     text-align: center;
     margin-top: 80px;

@@ -12,14 +12,14 @@
     <div class="nav">
         <ul class="nav-links">
             <li><a href="/home">Home</a></li>
-            <li><a href="/edit_profile_page">Edit Profile</a></li>
+            <li><a href="/profile/{{profile.id}}/edit">Edit Profile</a></li>
             <li><a href="/logout">Logout</a></li>
         </ul>
     </div>
     <div class="user-info">
         <h1>{{profile.first_name}}'s Profile</h1>
         <!-- <p>{{profile.qoute}}</p> -->
-        <p class="qoute">"This is where we will out the qoute"</p>
+        <p class="qoute">"{{profile.qoute}}"</p>
     </div>
     <div class="comment-box">
         <div class="new-comment">
@@ -28,16 +28,17 @@
     </div>
     <h2>Best Image</h2>
     <div class="best-image">
-        <img class="image-holder" src="{% static 'images\placeholder.png' %}" width="200" height="200">
+        <div>
+            <img class="image-holder" src="{% static 'images\placeholder.png' %}" width="200" height="200">
+        </div>
         <div class="image-gallery">
             <div class="gallery">
-                <!-- forloop of images (gallery) -->
                 <ul class="ul-forloop">
                     <li class="image-forloop"><img src="{% static 'images\placeholder.png' %}" width="50" height="50"></li>
                     <li class="image-forloop"><img src="{% static 'images\placeholder.png' %}" width="50" height="50"></li>
                     <li class="image-forloop"><img src="{% static 'images\placeholder.png' %}" width="50" height="50"></li>
                 </ul>
-                <a href="/gallery">Gallery</a>
+                <a id="gallery" href="/gallery">Gallery</a>
             </div>
         </div>
     </div>

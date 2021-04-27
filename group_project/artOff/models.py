@@ -25,6 +25,7 @@ class User(models.Model):
     first_name = models.CharField(max_length = 50)
     last_name = models.CharField(max_length = 70)
     username = models.CharField(max_length = 50)
+    qoute = models.CharField(max_length = 300, default = "change me")
     email = models.CharField(max_length = 100)
     password = models.CharField(max_length = 100)
     profile_pic = models.ImageField(upload_to= "images/")

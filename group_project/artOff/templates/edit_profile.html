@@ -6,33 +6,46 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/edit_profile.css' %}">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <a href="/home">Home</a>
-            <a href="/logout">Logout</a>
+    <div class="header">
+        <a href="/home">Home</a>
+        <a href="/logout">Logout</a>
+    </div>
+    <div class="edit-form">
+        <div class="profile-pic">
+            <form action="/edit_pic" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+                <img class="p-pic" src="{{profile.profile_pic.url}}" alt="{{profile.first_name}}" width="200" height="300">
+                <input type="file" name="profile_pic">
+                <div>
+                    <button class="profile-pic-button" type="submit">New Profile Pic</button>
+                </div>
+            </form>
         </div>
-        <div class="row justify-content-center mt-5">
-            <div class="col-md-8 col-sm-12 offset-md-1 p-4 text-center">
+        <div class="user-info-form">
+            <form action="/edit_info" method="POST">
+                {% csrf_token %}
                 <div>
-                    <img src="" alt="Profile Pic">
-                    <button type="submit">New Profile Pic</button>
+                    First Name: <input type="text" name="first_name" value={{profile.first_name}}>
                 </div>
                 <div>
-                    <form action="/edit_account/{{user.id}}" method="POST">
-                        {% csrf_token %}
-                        <p>First Name <input type="text" name="first_name" value={{user.first_name}}></p>
-                        <p>Last Name <input type="text" name="last_name" value={{user.last_name}}></p>
-                        <p>Username <input type="text" name="username" value={{user.username}}></p>
-                        <p>Quote <input type="text" name="quote" value={{user.quote}}></p>
-                        <p>Email <input type="text" name="email" value={{user.email}}></p>
-                        <button type="submit">Submit Changes</button>
-                    </form>
+                    Last Name: <input type="text" name="last_name" value={{profile.last_name}}>
                 </div>
-            </div>
+                <div>
+                    Username: <input class="username-move-right" type="text" name="username" value={{profile.username}}>
+                </div>
+                <div>
+                    Qoute: <input class="qoute-move-right" type="text" name="qoute" value={{profile.qoute}}>
+                </div>
+                <div>
+                    Email: <input class="email-move-right" type="text" name="email" value={{profile.email}}>
+                </div>
+                <div>
+                    <button id="user-info" type="submit">Submit Changes</button>
+                </div>
+            </form>
         </div>
     </div>
 </body>
