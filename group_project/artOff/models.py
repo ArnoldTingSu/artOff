@@ -25,7 +25,7 @@ class User(models.Model):
     first_name = models.CharField(max_length = 50)
     last_name = models.CharField(max_length = 70)
     username = models.CharField(max_length = 50)
-    qoute = models.CharField(max_length = 300, default = "change me")
+    quote = models.CharField(max_length = 300, default = "change me")
     email = models.CharField(max_length = 100)
     password = models.CharField(max_length = 100)
     profile_pic = models.ImageField(upload_to= "images/")
@@ -45,9 +45,13 @@ class Art(models.Model):
     art_image = models.ImageField(upload_to= "images/")
     user_art = models.ForeignKey(User, related_name= 'users_art', on_delete = models.CASCADE)
     user_likes = models.ManyToManyField(User, related_name='liked_post')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     objects = ArtManager()
 
 class Comments(models.Model):
     comment = models.TextField()
     user_comment = models.ForeignKey(User, related_name = "users_comment", on_delete = models.CASCADE)
     art_comment = models.ForeignKey(Art, related_name = "art_comments", on_delete = models.CASCADE )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
