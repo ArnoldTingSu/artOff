@@ -2,6 +2,7 @@ ul.nav-links{
     padding: 0px;
     display: flex;
     justify-content: flex-end;
+    margin: 0px;
 }
 li{
     list-style: none;
@@ -10,33 +11,32 @@ li{
 }
 a{
     font-size: x-large;
+    margin-right: 20px;
 }
 a#gallery{
-    width: 590px;
-    display: flex;
-    justify-content: flex-end;
+    display: block;
+    text-align: center;
+    margin-left: 90px;
 }
 h1{
     text-align: center;
     margin-top: 80px;
 }
 p.qoute{
-    margin-left: 250px;
+    margin-left: 400px;
 }
 p{
     text-align: center;
     width: 350px;
-}
-p.posted-comment{
-    margin-right: 75px;
+    display: inline;
 }
 div.user-info{
     border-bottom: black solid 3px;
     margin: 0px 200px 0px 200px;
 }
 div.comment-box{
-    display: flex;
-    justify-content: flex-end;
+    position: absolute;
+    right: 0px;
     margin-right: 260px;
 }
 div.gallery{
@@ -47,23 +47,38 @@ div.gallery{
 div.new-comment{
     width: 300px;
 }
+img{
+    border-radius: 15px;
+}
 div.image-gallery{
-    background-color: pink;
     width: 600px;
     height: 245px;
-    margin-left: 75px;
+    /* margin-left: 200px; */
     display: inline-block;
+    margin-top: 50px;
+    position: absolute;
+    right: 0px;
 }
 div.best-image{
-    margin-left: 200px;
-}
-img.image-holder{
-    margin-bottom: 129px;
+    margin-left: 230px;
 }
 h2{
-    display: inline;
+    margin-top: 28px;
     margin-left: 245px;
+}
+h3.gallery{
+    text-align: center;
+    margin-right: 220px;
+}
+h3.best-images{
+    font-size: x-large;
+}
+ul{
+    display: inline-block;
+    padding: 0px;
+    /* margin: 100px 0px 0px 180px; */
 }
 li.image-forloop{
     display: inline-block;
+    margin-bottom: 20px;
 }
