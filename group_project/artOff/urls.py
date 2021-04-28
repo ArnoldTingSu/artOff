@@ -9,10 +9,7 @@ urlpatterns = [
     path('logout', views.logout),
     path('login', views.login),
     path('arena', views.arena_page),
-<<<<<<< HEAD
-=======
     path('register', views.create_user),
->>>>>>> 95103ef6958bc7afe5a5add9db27c227678749ab
     path('art-profile/<int:id>', views.art_profile),
     path('hall_of_fame_page', views.hall_of_fame_page),
     path('user-likes/<int:id>', views.likes),

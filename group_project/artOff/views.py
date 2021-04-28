@@ -128,9 +128,13 @@ def login(request):
 
 # LIKE METHOD
 def likes(request, art_id):
-    user = User.objects.get(id=request.session['user_id'])
-    like = Art.objects.get(art_id=id)
-    user.liked_post.add(like)
+    if request.method == "POST":
+        likee = Art.objects.get(id=art_id)
+        user = User.objects.get(id=request.session['user_id'])
+        if likee.likes.all().filter(id=request.session['user_id']).exists():
+            likee.likes.remove(user)
+        else:
+            likee.likes.add(user)
     return redirect('/home')
 
 def make_comment(request, id):
