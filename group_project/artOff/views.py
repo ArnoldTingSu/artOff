@@ -51,7 +51,11 @@ def hall_of_fame_page(request):
 
 # GALLERY PAGE 
 def gallery_page(request):
-    return render(request, "gallery.html")
+    context = {
+        "user" : User.objects.get(id = request.session['user_id']),
+        "art" : Art.objects.all()
+    }
+    return render(request, "gallery.html", context)
 
 # PROFILE EDIT PAGE
 def edit_profile_page(request, profile_id):
