@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,57 +8,37 @@
     <title>ArtOff Registration</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="error-msg">
         {% if messages %}
-            <ul class="messages">
-                {% for message in messages %}
-                    <li {% if messages.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
-                {% endfor %}
-            </ul>
+        <ul class="messages">
+            {% for message in messages %}
+            <li {% if messages.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
         {% endif %}
     </div>
     <div id="reg_container">
-        <div class="reg_head">
-            <h1>ArtOff</h1>
-            <h3>Show me what you got!</h3>
-        </div>
-        <div class="reg_body">
-            <p>Not yet a member? Register here</p>
-            <h3>Registration</h3>
-            <div class="register-form" >
-                <form action="/register" method="POST" enctype="multipart/form-data">
+        <h1>ArtOff</h1>
+        <div class="register-form">
+            <form action="/register" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
-                <div class="field">
-                    <input type="text" name="first_name" value="First Name">
-                </div>
-                <div class="field">
-                    <input type="text" name="last_name" value="Last Name">
-                </div>
-                <div class="field">
-                    <input type="text" name="username" value="Username" >
-                </div>
-                <div class="field">
-                        <input type="text" name="email" value="name@gmail.com">
-                </div>
-                <div class="field">
-                    <input type="password" name="password" value="Password" >
-                </div>
-                <div class="field">
-                    <label class="confirm-password" for="confirm_password">Confirm Password</label>
-                    <br>
-                    <input type="password" name="confirm_password" id="confirm_password">
-                </div>
-                <div class="field">
-                    <input type="file" name="profile_pic" >
-                </div>
-                <div>
-                    <button type="submit">Register</button>
-                </div>
+                <input type="text" name="first_name" placeholder="First Name">
+                <input type="text" name="last_name" placeholder="Last Name">
+                <input type="text" name="username" placeholder="Username">
+                <input type="text" name="email" placeholder="name@gmail.com">
+                <input type="password" name="password" placeholder="Password">
+                <input type="password" name="confirm_password" placeholder="Confirm Password">
+                <input type="file" name="profile_pic" class="aFile">
+                <button type="submit" class="btn">Register</button>
             </form>
+            <p>Already a member?</p><a href="/login_page" style="color: white; text-decoration: none;"> >> Login Here <<</a>
         </div>
     </div>
-    <a href="/login_page">Already a memeber?</a>
 </body>
+
 </html>

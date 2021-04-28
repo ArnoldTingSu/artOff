@@ -1,35 +1,54 @@
-.register-form{
-    display: flex;
-    justify-content: center;
-    margin: 50px  0;
+
+#reg_container {
+    margin: auto;
+    background-color: black;
+    background-size: cover;
+    padding-bottom: 50px;
 }
-a{
-    display: flex;
-    justify-content: center;
-    margin-right: 60px;
+
+h1 {
+    color: white;
+    font-size: 75px;
+    font-family: 'Original Surfer', cursive;
+    text-shadow: 4px 10px gray;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: auto;
+    padding-top: 35px;
+    font-family: 'Original Surfer', cursive;
 }
-input[type="text"]{
+
+p {
+    text-align: center;
+    color: white;
+}
+.register-form {
+    margin: auto;
+    width: 275px;
     text-align: center;
 }
-label.confirm-password{
-    margin-left: 25px;
+
+input {
+    border-radius: 30px;
+    padding: 8px;
+    margin: 5px;
 }
-h1{
-    display: flex;
-    justify-content: center;
-    margin-right: 80px;
+
+.aFile {
+    margin-left: 50px;
+    border-radius: 30px;
+    padding: 2px;
+    font-style: italic;
+    color: white;
 }
-h3{
-    display: flex;
-    justify-content: center;
-    margin-right: 80px;
-}
-p{
-    display: flex;
-    justify-content: center;
-    margin-right: 80px;
-}
-button{
-    margin-top: 10px;
-    margin-left: 48px
+
+.btn {
+    width: 50%;
+    margin-top: 8px;
+    margin-bottom: 50px;
+    padding: 2px;
+    font-style: italic;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
 }
