@@ -34,7 +34,7 @@ def art_profile(request, id):
     one_art = Art.objects.get(id=id)
     context = {
         "art": one_art,
-        "comments": Comments.objects.all()
+        "comments": Comment.objects.all()
     }
     return render(request, "art_profile.html", context)
 
