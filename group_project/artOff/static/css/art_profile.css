@@ -1,0 +1,76 @@
+
+.links {
+    margin: auto;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+
+.art_head {
+    margin: auto;
+    text-align: center;
+    border-top: 4px double black;
+}
+
+img {
+    margin-left: 50px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.info {
+    display: inline-block;
+    border: 8px solid black;
+    vertical-align: top;
+    width: 600px;
+    margin-left: 30px;
+}
+
+h4 {
+    margin-left: 25px;
+}
+
+h2 {
+    margin-top: -43px;
+    text-align: center;
+    border-bottom: 4px solid black;
+    padding-bottom: 20px;
+}
+
+h3 {
+    text-align: center;
+}
+
+.head3 {
+    border-top: 4px double black;
+}
+
+.make-comment {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+textarea {
+    width: 90%;
+    margin-left: 26px;
+    resize: none;
+    border-radius: 30px;
+    outline: none;
+    padding-top: 2px;
+    text-align: center;
+}
+
+button {
+    text-align: center;
+    margin-left: 37%;
+    margin-top: 7px;
+    padding: 3px;
+    border-radius: 30px;
+    width: 25%;
+    background-color: black;
+    color: white;
+}
+
+.comment-box {
+    border: 2px solid black;
+}

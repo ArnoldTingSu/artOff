@@ -1,69 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Document</title>
-        {% load static %}
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/art_profile.css' %}">
 </head>
+
 <body>
     <div class="container">
-        <div class="row justify-content-left mt-5">
-            <h1>Artwork Name</h1>
-            <a href="/home">Home</a>
-            <a href="/logout">Logout</a>
+        <div class="links">
+            <a href="/home">Home</a> | <a href="/hall_of_fame_page">Hall Of Fame</a> | <a href="/gallery">Gallery</a> |
+            <a href="/arena">Arena</a> | <a href="/logout">Logout</a>
         </div>
-        <div class="row justify-content-left mt-5">
-            <div class="col-md-8 col-sm-12 offset-md-1 p-4 text-center">
-                <div>
-                    <img src="" alt="artwork">
-                </div>
-                <div>
-                    <div>
-                        <h3>Likes:</h3>
-                        <h3>Upload Date:</h3>
-                        <h3>Artist:</h3>
-                    </div>
-                    <div>
-                    <h3>Liked By:</h3>
-                        <div>
-
-                    <!-- Text field for likes box -->
-            
-                        </div>
-                    </div>
-                </div>
-                <div>
+        <div class="art_head">
+            <h3>I call this ...</h3>
+            <h1>"{{art.caption}}"</h1>
+        </div>
+        <img src="{{art.art_image.url}}" alt="artwork" width="600" height="400">
+        <div class="info">
+            <h4>Drawn by:</h4>
+            <h2>- {{art.user_art.first_name}} {{art.user_art.last_name}} -</h2>
+            <h4>Uploaded Date:</h4>
+            <h2>- {{art.created_at|date:'M d, Y P'}} -</h2>
+            <div class="make-comment">
+                <h3>Leave a comment</h3>
+                <form action="/add_comment" method="POST">
+                    {% csrf_token %}
+                    <textarea name="comment" placeholder="Enter Comment Here"></textarea>
+                    <button type="submit">comment</button>
+                </form>
             </div>
         </div>
-        <div class="row justify-content-left mt-5">
-            <div class="col-md-8 col-sm-12 offset-md-1 p-4 text-center">
-                <div>
-                    <h3>Comments:</h3>
-
-                    <!-- Text field for comments box -->
-
-                <div>
-                    <h3>Leave a comment!</h3>
-                    <form action="/add_comment" method="POST">
-                        {% csrf_token %}
-                        <div>
-                            <input type="textfield" name="comment">
-                        </div>
-                        <button type="submit">Add Comment</button>
-                    </form>
-                </div>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-left mt-5">
-            <div class="col-md-8 col-sm-12 offset-md-1 p-4 text-center">
-                    <a href="/delete">Delete Pic</a>
-            </div>
+        <h3 class="head3">Comments</h3>
+        <div class="comment-box">
+            {% for comment in comments %}
+            <p>{{comment.comments}}</p>
+            <p>By: {{comment.art_comment.username}}</p>
+            {% endfor %}
         </div>
     </div>
 </body>
+
 </html>
