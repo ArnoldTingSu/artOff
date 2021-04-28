@@ -1,7 +1,12 @@
-
+* {
+    margin: 0;
+    padding: 0;
+}
 #home_wrapper {
-    border: 10px double yellow;
-    background-color: black;
+
+}
+.body {
+    display: inline;
 }
 
 .a_links {

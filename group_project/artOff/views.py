@@ -24,7 +24,8 @@ def home(request):
     context = {
         "users" : User.objects.all(),
         "user": User.objects.get(id = request.session['user_id']),
-        "arts" : Art.objects.all()
+        "arts" : Art.objects.all(),
+        "test" : Art.objects.get(id=1)
     }
     return render(request, "home.html", context)
 
@@ -107,7 +108,7 @@ def create_art(request):
                 messages.error(request, value)
         else:
             print('Beginning Create of art')
-            Art.objects.create(caption = request.POST['caption'], art_image = request.FILES['art_image'], user_art = User.objects.get(id = request.session['user_id']))
+            Art.objects.create(caption = request.POST['caption'], art_image = request.FILES['art_image'], artist = User.objects.get(id = request.session['user_id']))
             print('Art Has Been Made')
         return redirect('/home')
 
@@ -126,9 +127,9 @@ def login(request):
     return redirect('/login_page')
 
 # LIKE METHOD
-def likes(request, id):
+def likes(request, art_id):
     user = User.objects.get(id=request.session['user_id'])
-    like = Art.objects.get(id=id)
+    like = Art.objects.get(art_id=id)
     user.liked_post.add(like)
     return redirect('/home')
 

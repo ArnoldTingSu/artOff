@@ -8,4 +8,4 @@ admin.site.register(User)
 
 admin.site.register(Art)
 
-admin.site.register(Comments)
+admin.site.register(Comment)
