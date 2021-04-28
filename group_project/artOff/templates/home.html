@@ -22,7 +22,7 @@
         <h2 class="home_h2">Todays Lead is <a href=""></a>{{user.username}}</h2>
         <div class="artwork">
             {% for art in arts %}
-                <img src="{{art.art_image.url}}" alt="{{user.first_name}}" width="300" class="anImage"> 
+                <a href="/art-profile/{{art.id}}"><img src="{{art.art_image.url}}" alt="{{user.first_name}}" width="300" class="anImage"></a>
             <p>By: <a href="/user_profile/{{art.user_art.id}}">{{art.user_art.username}}</a>  |  <button class="like_art"><a href="/user-likes/{{art.id}}">Like</a></button> {{art.user_likes.count}}</p>
             {% endfor %}
         </div>

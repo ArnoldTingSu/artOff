@@ -28,6 +28,15 @@ def home(request):
     }
     return render(request, "home.html", context)
 
+# ART PROFILE
+def art_profile(request, id):
+    one_art = Art.objects.get(id=id)
+    context = {
+        "art": one_art,
+        "comments": Comments.objects.all()
+    }
+    return render(request, "art_profile.html", context)
+
 # USER PROFILE PAGE
 def user_profile_page(request, id):
     context ={
