@@ -3,6 +3,7 @@ ul#nav-list{
     display: flex;
     justify-content: flex-end;
     margin: 0px;
+    margin-top: 10px;
 }
 li{
     list-style: none;
