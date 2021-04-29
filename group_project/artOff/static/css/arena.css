@@ -8,6 +8,7 @@ div.navbar{
 a {
     margin-top: 10px;
     margin-right: 20px;
+    color: white;
 }
 
 .container {
@@ -25,5 +26,13 @@ a {
 }
 
 h1 {
+    color: white;
+}
+
+h2 {
+    color: white;
+}
+
+p {
     color: white;
 }
