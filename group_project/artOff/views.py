@@ -142,10 +142,15 @@ def likes(request, art_id):
     
 
 def artComment(request, id):
+    print("could not get id's")
+    print('*'*50)
     user = User.objects.get(id = request.session['user_id'])
     art = Art.objects.get(id = id )
+    print("*"*50)
+    print("got both id's")
     Comment.objects.create(comment = request.POST['comment'], user = user, artwork = art )
-    return redirect(f'/art-profile/{art_image.id}')
+    print("comment has been made")
+    return redirect(f'/art-profile/{art.id}')
 
 def make_comment(request, id):
     user = User.objects.get(id = request.session['user_id'])

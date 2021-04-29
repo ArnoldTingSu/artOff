@@ -12,13 +12,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <script>
+    <!-- <script>
         $(document).ready(function(){
             $('.comment-form').submit(function(){
                 return false
             });
         });
-    </script>
+    </script> -->
 </head>
 
 <body>
@@ -40,7 +40,7 @@
             <h2>- {{art.created_at|date:'M d, Y P'}} -</h2>
             <div class="make-comment">
                 <h3>Leave a comment</h3>
-                <form class="comment-form" action="/art-comment/{{art_image.id}}" method="POST">
+                <form class="comment-form" action="/art-comment/{{art.id}}" method="POST">
                     {% csrf_token %}
                     <textarea name="comment" placeholder="Enter Comment Here"></textarea>
                     <button type="submit" class="btn">comment</button>
