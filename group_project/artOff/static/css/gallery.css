@@ -41,4 +41,5 @@ p{
 
 .container {
     background-color: black;
+    min-height: 800px;
 }
