@@ -20,7 +20,7 @@
             <div class="col-md-8 col-sm-12 text-center">
                 <div class="arts">
                     {% for i in art %}
-                        {% if forloop.counter < 3 %}
+                        {% if forloop.counter < 2 %}
                         <img src="{{i.art_image.url}}" alt="{{i.caption}}" width="300" height="300">
                         <form action="/likes" method="POST">
                             {% csrf_token %}
