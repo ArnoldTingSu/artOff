@@ -32,9 +32,11 @@ def home(request):
 # ART PROFILE
 def art_profile(request, id):
     one_art = Art.objects.get(id=id)
+    this_user = User.objects.get(id=request.session["user_id"])
     context = {
         "art": one_art,
-        "comments": Comment.objects.all()
+        "comments": Comment.objects.all(),
+        "user": this_user
     }
     return render(request, "art_profile.html", context)
 
@@ -137,10 +139,16 @@ def likes(request, art_id):
             likee.likes.add(user)
     return redirect('/home')
 
+def artComment(request, id):
+    user = User.objects.get(id = request.session['user_id'])
+    art = Art.objects.get(id = id )
+    Comment.objects.create(comment = request.POST['comment'], user = user, artwork = art )
+    return redirect(f'/art-profile/{art_image.id}')
+
 def make_comment(request, id):
     user = User.objects.get(id = request.session['user_id'])
     art = Art.objects.get(id = id )
-    Comments.objects.create(comment = request.POST['comment'], user = user, art = art )
+    Comment.objects.create(comment = request.POST['comment'], user = user, artwork = art )
     return redirect('/arena')
 
 def edit(request):

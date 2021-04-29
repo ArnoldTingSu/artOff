@@ -1,3 +1,7 @@
+#container {
+    background-color: black;
+    padding-bottom: 30px;
+}
 
 .links {
     margin: auto;
@@ -6,10 +10,14 @@
     padding-bottom: 20px;
 }
 
+a {
+    color: yellow;
+}
+
 .art_head {
     margin: auto;
     text-align: center;
-    border-top: 4px double black;
+    border-top: 4px double green;
 }
 
 img {
@@ -20,7 +28,7 @@ img {
 
 .info {
     display: inline-block;
-    border: 8px solid black;
+    border: 8px solid green;
     vertical-align: top;
     width: 600px;
     margin-left: 30px;
@@ -28,21 +36,30 @@ img {
 
 h4 {
     margin-left: 25px;
+    color: blue;
 }
 
 h2 {
     margin-top: -43px;
     text-align: center;
-    border-bottom: 4px solid black;
+    border-bottom: 4px solid yellow;
     padding-bottom: 20px;
+    color: white;
 }
 
 h3 {
     text-align: center;
+    color: white;
+}
+
+h1 {
+    color: red;
+    font-family: 'Original Surfer', cursive;
 }
 
 .head3 {
-    border-top: 4px double black;
+    border-top: 4px double green;
+    padding-top: 10px;
 }
 
 .make-comment {
@@ -63,7 +80,7 @@ textarea {
 button {
     text-align: center;
     margin-left: 37%;
-    margin-top: 7px;
+    margin-top: 10px;
     padding: 3px;
     border-radius: 30px;
     width: 25%;
@@ -72,5 +89,13 @@ button {
 }
 
 .comment-box {
-    border: 2px solid black;
+    margin: auto;
+    border: 2px solid yellow;
+    width: 600px;
+    text-align: center;
+}
+
+p {
+    color: blue;
+    font-style: italic;
 }
