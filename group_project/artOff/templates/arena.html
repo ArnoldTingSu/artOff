@@ -20,23 +20,25 @@
             <div class="col-md-8 col-sm-12 text-center">
                 <div class="arts">
                     {% for i in art %}
-                    <img src="{{i.art_image.url}}" alt="{{i.caption}}" width="300" height="300">
-                    <form action="/likes" method="POST">
-                        {% csrf_token %}
-                        <button type="submit">Like</button>
-                    </form>
+                        {% if forloop.counter < 3 %}
+                        <img src="{{i.art_image.url}}" alt="{{i.caption}}" width="300" height="300">
+                        <form action="/likes" method="POST">
+                            {% csrf_token %}
+                            <button type="submit">Like</button>
+                        </form>
 
-                    <h1>VS</h1>
-                    
-                    <form action="/next_image" method="POST">
-                        {% csrf_token %}
-                        <button type="submit">Next</button>
-                    </form>
-                    <img src="{{i.art_image.url}}" alt="{{i.caption}}" width="400">
-                    <form action="/likes" method="POST">
-                        {% csrf_token %}
-                        <button type="submit">Like</button>
-                    </form>
+                        <h1>VS</h1>
+                        
+                        <form action="/next_image" method="POST">
+                            {% csrf_token %}
+                            <button type="submit">Next</button>
+                        </form>
+                        <img src="{{i.art_image.url}}" alt="{{i.caption}}" width="400">
+                        <form action="/likes" method="POST">
+                            {% csrf_token %}
+                            <button type="submit">Like</button>
+                        </form>
+                        {% endif %}
                     {% endfor %}
                 </div>
             </div>
@@ -64,3 +66,4 @@
     <script src='main.js'></script>
 </body>
 </html>
+
