@@ -77,7 +77,7 @@ def edit_profile_page(request, profile_id):
     return render(request, "edit_profile.html", context)
 
 # DELETE PAGE
-def delete_confirm_page(request):
+def delete_confirm_page(request, id):
     return render(request, "delete_confirm.html")
 
 # <----------POST---------->
@@ -181,10 +181,9 @@ def logout(request):
     return redirect('/')
 
 # DELETE METHOD
-def destroy(request, art_id):
-    art = Art.objects.get(id = art_id)
-    if request.method == "POST":
-        art.delete()
+def destroy(request, id):
+    art = Art.objects.get(id=id)
+    art.delete()
     return redirect("/home")
 
 # UPDATE PROFILE INFORMATION
