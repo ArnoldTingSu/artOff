@@ -8,6 +8,7 @@
 }
 .bottom {
     display: flex;
+    justify-content: space-evenly;
 }
 .activity {
     border: 2px dotted black;
@@ -33,13 +34,16 @@
 }
 
 .uploadArt {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
     margin-top: 30px;
     margin-bottom: 30px;
     width: 500px;
     text-align: center;
     border: 2px solid yellow;
     padding: 5px;
-    background-color: gray;
+    background-color: rgb(0, 0, 0);
 
 }
 
