@@ -21,27 +21,41 @@
         </div>
         <!-- link tag here -->
         <!--<h2 class="home_h2">Todays Lead is <a href=""></a>{{user.username}}</h2> ## Hall of Fame fly-by  -->
-        <div class="artwork">
-
-                <a href="/art-profile/{{art.id}}"><img src="{{art.art_image.url}}" alt="{{user.first_name}}" width="300" class="anImage"></a>
-            <p>By: <a href="/user_profile/{{art.user_art.id}}">{{art.user_art.username}}</a>  |  <button class="like_art"><a href="/user-likes/{{art.id}}">Like</a></button> {{art.user_likes.count}}</p>
-            
+        <div class="main">
+            <div class="top">
+                <div class="gallery-showcase">
+                    <div class="artwork-header">
+                        <h1>Recently Uploaded</h1>
+                    </div>
+                    <div class="artwork">
+                        {% for art in user_art %}
+                        <div class="gallery-art">
+                            <a href="/art-profile/{{art.id}}"><img src="{{art.art_image.url}}" alt="{{user.first_name}}" width="300" class="anImage"></a>
+                            <p>By: <a href="/user_profile/{{art.artist.id}}">{{art.artist.username}}</a>  |  Likes: {{art.likes.all.count}} <form action="user-likes/{{art.id}}" id="likes" method="POST">
+                                {% csrf_token %} <input type="submit" value="Like!"></form></p>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="uploadArt">
+                        <!-- This is a form to create art/upload art -->
+                        <h3 class="home_h3">Upload Art</h3>
+                        <form action="/create_art" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <input type="text" required placeholder="Caption" name="caption">
+                            <input type="file" required name="art_image" class="caption">
+                            <button type="submit" class="artUpload_btn">Upload Art</button>
+                        </form>
+                    </div>
+                    <div class="activity">
+                        <h1>activity</h1>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="uploadArt">
-            <!-- This is a form to create art/upload art -->
-            <h3 class="home_h3">Upload Art</h3>
-            <form action="/create_art" method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                    <input type="text" required placeholder="Caption" name="caption">
-                    <input type="file" required name="art_image" class="caption">
-                    <button type="submit" class="artUpload_btn">Upload Art</button>
-            </form>
-        </div>
-        <div class="activity">
-            <h1>activity</h1>
-        </div>
-        <script src='main.js'></script>
-    </div>
-</body>
+            <script src='main.js'></script>
+        </body>
 
 </html>
