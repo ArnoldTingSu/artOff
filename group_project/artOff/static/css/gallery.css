@@ -10,6 +10,7 @@ li{
 }
 h1{
     text-align: center;
+    color: white;
 }
 a{
     margin-right: 20px;
@@ -31,4 +32,8 @@ p{
 }
 img{
     border-radius: 20px;
+}
+
+.container {
+    background-color: black;
 }
