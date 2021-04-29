@@ -21,4 +21,9 @@ a {
 
 .arena_art {
     border: 2px solid white;
+    margin: 20px;
+}
+
+h1 {
+    color: white;
 }
