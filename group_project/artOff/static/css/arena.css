@@ -10,8 +10,15 @@ a {
     margin-right: 20px;
 }
 
+.container {
+    background-color: black;
+}
+
 .arts {
-    background-color: slategrey;
+    background-color: black;
     padding: 20px;
 }
 
+.arena_art {
+    border: 2px solid white;
+}
