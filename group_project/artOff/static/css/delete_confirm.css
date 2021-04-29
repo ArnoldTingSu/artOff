@@ -21,8 +21,9 @@ h2 {
 }
 
 .btn {
-    margin: auto;
+    margin: 0 500px;
     width: 200px;
+    display: block;
 }
 
 .no {

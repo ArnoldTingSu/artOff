@@ -78,7 +78,10 @@ def edit_profile_page(request, profile_id):
 
 # DELETE PAGE
 def delete_confirm_page(request, id):
-    return render(request, "delete_confirm.html")
+    context = {
+        "art" : Art.objects.get(id = id)
+    }
+    return render(request, "delete_confirm.html", context)
 
 # <----------POST---------->
 
