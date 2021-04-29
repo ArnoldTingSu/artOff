@@ -41,3 +41,10 @@ h2 {
 p {
     color: white;
 }
+
+button {
+    padding: 5px;
+    border: 1px solid white;
+    background-color: black;
+    color: white;
+}
