@@ -2,11 +2,16 @@
     margin: 0;
     padding: 0;
 }
-#home_wrapper {
 
+.main {
+    display: block;
 }
-.body {
-    display: inline;
+.bottom {
+    display: flex;
+}
+.activity {
+    border: 2px dotted black;
+    width: 500px;
 }
 
 .a_links {
@@ -28,18 +33,19 @@
 }
 
 .uploadArt {
-    margin: auto;
     margin-top: 30px;
     margin-bottom: 30px;
-    width: 350px;
+    width: 500px;
     text-align: center;
     border: 2px solid yellow;
-    padding: 25px;
+    padding: 5px;
     background-color: gray;
+
 }
 
 .artUpload_btn {
-    width: 100%;
+    display: block;
+    margin: 0 33%;
 }
 
 .caption {
@@ -50,14 +56,23 @@
     font-family: 'Bangers', cursive;
     color: green;
 }
+.gallery-showcase {
+    display: block;
+}
 
 .artwork {
-    margin: auto;
-    width: 800px;
-    border: 3px solid yellow;
-    padding: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
     text-align: center;
     background-color: grey;
+    
+}
+.artwork-header > h1 {
+    display: flex;
+    justify-content: center;
     
 }
 
@@ -66,7 +81,7 @@ transition: transform .5s;
 }
 
 .anImage:hover {
-    -ms-transform: scale(2.0);
-    -webkit-transform:scale(2.0);
-    transform:scale(2.0);
+    -ms-transform: scale(1..09);
+    -webkit-transform:scale(1.09);
+    transform:scale(1.09);
 }

@@ -24,7 +24,7 @@ def home(request):
     context = {
         "users" : User.objects.all(),
         "user": User.objects.get(id = request.session['user_id']),
-        "arts" : Art.objects.all(),
+        "user_art" : User.objects.get(id = request.session['user_id']).artworks.all(),
         "test" : Art.objects.get(id=1)
     }
     return render(request, "home.html", context)
@@ -135,7 +135,9 @@ def likes(request, art_id):
             likee.likes.remove(user)
         else:
             likee.likes.add(user)
+            redirect('/')
     return redirect('/home')
+    
 
 def make_comment(request, id):
     user = User.objects.get(id = request.session['user_id'])
