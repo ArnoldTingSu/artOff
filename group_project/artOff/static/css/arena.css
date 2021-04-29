@@ -1,13 +1,16 @@
-div.header{
+div.navbar{
     display: flex;
     justify-content: flex-end;
     font-size: x-large;
     margin-right: 20px;
 }
-a{
+
+a {
     margin-top: 10px;
     margin-right: 20px;
 }
-.col-md-8.col-sm-12.offset-md-1.p-4.text-center {
-    display: flex;
+
+.arts {
+    
 }
+

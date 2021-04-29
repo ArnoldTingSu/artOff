@@ -18,23 +18,27 @@
         </div>
         <div class="row justify-content-center mt-5">
             <div class="col-md-8 col-sm-12 text-center">
-                {% for i in art %}
-                <img src="{{i.art_image.url}}" alt="{{i.caption}}" width="300" height="300">
-                <form action="/like" method="POST">
-                    {% csrf_token %}
-                    <button type="submit">Like</button>
-                </form>
-                <h1>VS</h1>
-                <form action="/next_image" method="POST">
-                    {% csrf_token %}
-                    <button type="submit">Next</button>
-                </form>
-                <img src="{{i.art_image.url}}" alt="{{i.caption}}" width="300" height="300">
-                <form action="/like" method="POST">
-                    {% csrf_token %}
-                    <button type="submit">Like</button>
-                </form>
-                {% endfor %}
+                <div class="arts">
+                    {% for i in art %}
+                    <img src="{{i.art_image.url}}" alt="{{i.caption}}" width="300" height="300">
+                    <form action="/likes" method="POST">
+                        {% csrf_token %}
+                        <button type="submit">Like</button>
+                    </form>
+
+                    <h1>VS</h1>
+                    
+                    <form action="/next_image" method="POST">
+                        {% csrf_token %}
+                        <button type="submit">Next</button>
+                    </form>
+                    <img src="{{i.art_image.url}}" alt="{{i.caption}}" width="400">
+                    <form action="/likes" method="POST">
+                        {% csrf_token %}
+                        <button type="submit">Like</button>
+                    </form>
+                    {% endfor %}
+                </div>
             </div>
             <!-- in the works so only winners get to recieve a comment? -->
             <div>
