@@ -20,7 +20,7 @@
     </div>
     {% for i in user.artworks.all %}
     <div class="images">
-        <img src="{{i.art_image.url}}" width="250" height="300" alt="{{i.caption}}"><br><p><a href="/art-profile{{i.id}}" >"{{i.caption}}"</a></p></img>
+        <img src="{{i.art_image.url}}" width="400" alt="{{i.caption}}"><br><p><a href="/art-profile{{i.id}}" >"{{i.caption}}"</a></p></img>
     </div>
     {% endfor %}
     <script src='main.js'></script>
