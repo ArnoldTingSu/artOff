@@ -14,6 +14,11 @@ a {
     color: yellow;
 }
 
+h5 {
+    color: yellow;
+    text-align: center;
+}
+
 .art_head {
     margin: auto;
     text-align: center;
@@ -63,8 +68,8 @@ h1 {
 }
 
 .make-comment {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 15px;
+    padding-bottom: 43px;
 }
 
 textarea {
@@ -80,7 +85,7 @@ textarea {
 button {
     text-align: center;
     margin-left: 37%;
-    margin-top: 10px;
+    margin-top: 7px;
     padding: 3px;
     border-radius: 30px;
     width: 25%;
