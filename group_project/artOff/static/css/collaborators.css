@@ -8,7 +8,9 @@
     background-color: black;
     min-width: 100%;
     min-height: 800px;
-    padding: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 50px;
 }
 
 h1 {
@@ -36,4 +38,12 @@ li {
 p {
     color: white;
     font-family: 'Original Surfer';
+}
+
+a {
+    color: white;
+}
+
+.navbar {
+    color: white;
 }
