@@ -24,7 +24,7 @@
                 <div class="arts">
                     {% for i in art %}
                         {% if forloop.counter < 2 %}
-                        <img class=arena_art src="{{i.art_image.url}}" alt="{{i.caption}}" width="400">
+                        <img class=arena_art src="{{i.art_image.url}}" alt="{{i.caption}}" width="300">
                         <form action="/likes" method="POST">
                             {% csrf_token %}
                             <button type="submit">Like</button>
@@ -37,7 +37,7 @@
                             {% csrf_token %}
                             <button type="submit">Next</button>
                         </form> -->
-                        <img class=arena_art src="{{i.art_image.url}}" alt="{{i.caption}}" width="400">
+                        <img class=arena_art src="{{i.art_image.url}}" alt="{{i.caption}}" width="300">
                         <form action="/likes" method="POST">
                             {% csrf_token %}
                             <button type="submit">Like</button>
