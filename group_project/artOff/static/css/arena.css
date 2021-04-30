@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    background-color: black;
 }
 
 div.navbar{
@@ -18,7 +19,8 @@ a {
 
 .container {
     background-color: black;
-    width: 100%;
+    min-width: 100%;
+    min-height: 800px;
 }
 
 .arts {
