@@ -1,13 +1,13 @@
 * {
     margin: 0;
     padding: 0;
-    background-color: black;
 }
 
 .container {
     background-color: black;
     min-height: 800px;
-    padding: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 h1 {
