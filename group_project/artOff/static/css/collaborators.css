@@ -6,7 +6,7 @@
 
 .container {
     background-color: black;
-    min-width: fit-content;
+    min-width: 1000px;
     min-height: 800px;
     padding: 100px;
 }
