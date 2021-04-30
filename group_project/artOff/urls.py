@@ -33,5 +33,6 @@ urlpatterns = [
     path('edit_profile_page/update', views.update_profile),
     path('hall_of_fame_page', views.hall_of_fame_page),
     path('user_profile/<int:id>', views.user_profile_page),
-    path('create_art', views.create_art)
+    path('create_art', views.create_art),
+    path('collaborators', views.collaborators)
 ]

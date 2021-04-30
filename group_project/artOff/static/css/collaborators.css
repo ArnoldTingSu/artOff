@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: black;
+}
+
+h1 {
+    color: white;
+}
+
+h2 {
+    color: white;
+}
+
+ul {
+    color: white;
+}
+
+li {
+    color: white;
+}

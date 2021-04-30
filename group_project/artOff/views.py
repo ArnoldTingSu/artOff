@@ -76,6 +76,10 @@ def edit_profile_page(request, profile_id):
     }
     return render(request, "edit_profile.html", context)
 
+# COLLABORATORS PAGE
+def collaborators(request):
+    return render(request, "collaborators.html")
+
 # DELETE PAGE
 def delete_confirm_page(request, id):
     context = {
