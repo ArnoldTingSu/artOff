@@ -9,7 +9,7 @@
     min-height: 800px;
     padding-left: 50px;
     padding-right: 50px;
-    padding-top: 100px;
+    padding-top: 50px;
 }
 
 h1 {
@@ -32,4 +32,8 @@ ul {
 li {
     color: white;
     padding: 5px;
+}
+
+p {
+    color: white;
 }
