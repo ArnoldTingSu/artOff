@@ -1,15 +1,14 @@
 * {
     margin: 0;
     padding: 0;
+    background-color: black;
 }
 
 .container {
     background-color: black;
     min-width: fit-content;
     min-height: 800px;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 50px;
+    padding: 100px;
 }
 
 h1 {
@@ -36,4 +35,5 @@ li {
 
 p {
     color: white;
+    font-family: 'Original Surfer';
 }
