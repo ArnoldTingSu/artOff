@@ -5,10 +5,13 @@
 
 .container {
     background-color: black;
+    min-width: 1000px;
+    min-height: 800px;
 }
 
 h1 {
     color: white;
+    padding-top: 10px;
 }
 
 h2 {
@@ -17,8 +20,12 @@ h2 {
 
 ul {
     color: white;
+    text-decoration: none;
+    list-style-type: none;
+    padding-top: 10px;
 }
 
 li {
     color: white;
+    padding: 5px;
 }
