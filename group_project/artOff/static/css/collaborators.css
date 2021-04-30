@@ -46,3 +46,7 @@ a {
 .navbar {
     color: white;
 }
+
+.row {
+    padding: 20px;
+}
