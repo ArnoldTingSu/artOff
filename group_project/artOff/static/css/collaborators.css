@@ -14,11 +14,12 @@
 
 h1 {
     color: white;
+    font-family: 'Original Surfer';
 }
 
 h3 {
     color: white;
-    font-family: 'Permanent Marker', cursive;
+    font-family: 'Permanent Marker';
 }
 
 ul {
