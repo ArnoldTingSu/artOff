@@ -4,12 +4,16 @@
     background-color: black;
 }
 
-.navbar{
-    display: flex;
-    justify-content: flex-end;
-    font-size: x-large;
-    margin-right: 20px;
+.container {
+    background-color: black;
+    min-width: 100%;
+    min-height: 800px;
+    padding: 50px;
+}
+
+.navbar {
     color: white;
+    min-width: 100%;
 }
 
 a {
@@ -18,12 +22,6 @@ a {
     color: white;
 }
 
-.container {
-    background-color: black;
-    min-width: 100%;
-    min-height: 800px;
-    padding: 50px;
-}
 
 .arts {
     background-color: black;
@@ -52,4 +50,16 @@ button {
     border: 1px solid white;
     background-color: black;
     color: white;
+}
+
+ul {
+    color: white;
+    text-decoration: none;
+    list-style-type: none;
+    padding-top: 10px;
+}
+
+li {
+    color: white;
+    padding: 5px;
 }
