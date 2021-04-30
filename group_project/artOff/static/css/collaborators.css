@@ -10,15 +10,16 @@
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 100px;
-    font-family: 'Bangers', cursive;
 }
 
 h1 {
     color: white;
+    font-family: sans-serif;
 }
 
-h2 {
+h3 {
     color: white;
+    font-family: 'Bangers', cursive;
 }
 
 ul {
