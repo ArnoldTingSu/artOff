@@ -62,9 +62,9 @@ def hall_of_fame_page(request):
     return render(request, "hall_of_fame.html")
 
 # GALLERY PAGE 
-def gallery_page(request):
+def gallery_page(request, user_id):
     context = {
-        "user" : User.objects.get(id = request.session['user_id']),
+        "user" : User.objects.get(id=user_id),
         "art" : Art.objects.all()
     }
     return render(request, "gallery.html", context)
@@ -187,7 +187,7 @@ def edit_pic(request):
     if request.method == "POST":
         profile.profile_pic = request.FILES['profile_pic']
         profile.save()
-    return redirect(f'user_profile/{profile.id}')
+    return redirect(f'/profile/{profile.id}/edit')
 
 # LOGOUT METHOD
 def logout(request):

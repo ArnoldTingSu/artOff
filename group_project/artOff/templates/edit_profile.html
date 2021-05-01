@@ -39,26 +39,16 @@
                     Username: <input class="username-move-right" type="text" name="username" value={{profile.username}}>
                 </div>
                 <div>
-                    Qoute: <input class="qoute-move-right" type="text" name="qoute" value={{profile.qoute}}>
+                    Quote: <input class="qoute-move-right" type="text" name="quote" value={{profile.qoute}}>
                 </div>
                 <div>
                     Email: <input class="email-move-right" type="text" name="email" value={{profile.email}}>
                 </div>
-<<<<<<< HEAD
+
                 <div>
                     <button id="user-info" type="submit">Submit Changes</button>
-=======
-                <div class=form-input>
-                    <form action="edit_profile_page/update" method="POST">
-                        {% csrf_token %}
-                        <p>First Name <input type="text" name="first_name" value={{user.first_name}}></p>
-                        <p>Last Name <input type="text" name="last_name" value={{user.last_name}}></p>
-                        <p>Username <input type="text" name="username" value={{user.username}}></p>
-                        <p>Quote <input type="text" name="quote" value={{user.quote}}></p>
-                        <p>Email <input type="text" name="email" value={{user.email}}></p>
-                        <button type="submit">Submit Changes</button>
-                    </form>
->>>>>>> 6b3f9bbca761d1c15aac8b6b9da0b96807cb9dd1
+
+               
                 </div>
             </form>
         </div>

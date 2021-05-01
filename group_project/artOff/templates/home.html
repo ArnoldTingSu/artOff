@@ -30,7 +30,7 @@
                     <div class="artwork">
                         {% for art in user_art %}
                         <div class="gallery-art">
-                            <a href="/art-profile/{{art.id}}"><img src="{{art.art_image.url}}" alt="{{user.first_name}}" width="300" class="anImage"></a>
+                            <a href="/art-profile/{{art.id}}"><img src="{{art.art_image.url}}" alt="{{user.first_name}}" width="300" height="300" class="anImage"></a>
                             <p>By: <a href="/user_profile/{{art.artist.id}}">{{art.artist.username}}</a>  |  Likes: {{art.likes.all.count}} <form action="user-likes/{{art.id}}" id="likes" method="POST">
                                 {% csrf_token %} <input type="submit" value="Like!"></form></p>
                             </div>

@@ -3,11 +3,9 @@
     padding: 0;
 }
 #landing {
-    padding-top: 75px;
-    padding-bottom: 75px;
     background-image: url("https://www.bluehorizonprints.com.au/wp-content/uploads/Graffiti-Collage-The-Buddha-s.jpg");
     background-size: cover;
-    height: 819px;
+    height: 969px;
 }
 
 h1{
@@ -35,10 +33,16 @@ h3{
     font-family: 'Permanent Marker', cursive;
 }
 
+.cardholder {
+    display: flex;
+    justify-content: center;
+}
+
 h4{
     color: yellow;
     font-family:monospace;
     font-style: italic;
+    vertical-align: center;
 }
 
 .log_link, .reg_link, .hof {
@@ -47,9 +51,9 @@ h4{
     margin-left: 13%;
     text-align: center;
     background-color: black;
-    display: inline-block;
     padding: 30px;
     width: 150px;
+    
 }
 
 button {
