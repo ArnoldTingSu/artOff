@@ -28,7 +28,8 @@ def home(request):
         "test" : Art.objects.get(id=1)
     }
     return render(request, "home.html", context)
-
+def new(request):
+    return HttpResponse("LOLIT")
 # ART PROFILE
 def art_profile(request, id):
     one_art = Art.objects.get(id=id)
